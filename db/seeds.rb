@@ -17,3 +17,6 @@ user2.email = 'test2@example.com'
 user2.password = 'password'
 user2.password_confirmation = 'password'
 user2.save!
+
+Message.create(from: 'test@example.com', to_user: 'test2@example.com', subject: 'Test Subject', body: 'Test Body')
+Message.create(from: 'test2@example.com', to_user: 'test@example.com', subject: 'Test Subject 2', body: 'Test Body 2')
