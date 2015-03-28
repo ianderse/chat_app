@@ -1,5 +1,10 @@
 <% if !current_user %>
-  <%= link_to 'Sign In', new_user_session_path %>
+  <%= link_to "Sign In", new_user_session_path %>
 <% else %>
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <%= link_to "Sign out", destroy_user_session_path %>
+<% end %>
+
+<% if current_user %>
+  <%= link_to "List Messages", messages_path %>
+  <%= link_to "New Message", new_message_path %>
 <% end %>
